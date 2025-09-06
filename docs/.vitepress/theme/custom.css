@@ -1,0 +1,30 @@
+div.docs-example {
+  width: 100%;
+  min-height: 100px;
+  box-sizing: border-box;
+  padding: 10px;
+  border: 4px solid #f6f6f7;
+  border-radius: 8px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+div.docs-example::after {
+  content: '效果演示';
+  color: rgb(60 60 67 / 56%);
+  font-size: 12px;
+  font-weight: 500;
+  position: absolute;
+  top: 2px;
+  right: 8px;
+  z-index: 2;
+}
+div.docs-example + div[class*='language-'] {
+  margin-top: 5px;
+}
+
+.display-block, .docs-example.display-block {
+  display: block;
+}
