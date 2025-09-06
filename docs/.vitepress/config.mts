@@ -149,8 +149,8 @@ export default defineConfig({
     },
     socialLinks: [{ icon: 'github', link: 'https://github.com/vuejs/vitepress' }],
   },
-  base: '/pages/learning-note',
-  outDir: '../../../dist/learning-note',
+  base: '/learning-note',
+  outDir: './.vitepress/dist',
   lastUpdated: true,
   head: [['link', { rel: 'icon', href: '/public/icon/icon-200.png' }]],
   // vite: {
