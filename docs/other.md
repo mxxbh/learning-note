@@ -1,13 +1,7 @@
-# 帮助
+# Other
 
 ## 开发工具
 
-- [MDN](https://developer.mozilla.org/zh-CN/) 👍
-- [Github](https://github.com/)
-- [Gitee](https://gitee.com/)
-- [Git](https://git-scm.com/ '代码版本管理工具') 👍
-- [Node](https://nodejs.org/en 'node js 运行环境') 👍
-- [nvs](https://github.com/jasongin/nvs/releases 'node 版本管理')
 - [Visual Studio Code](https://code.visualstudio.com/ '代码编辑器') 👍
 - [Sublime Merge](https://www.sublimemerge.com/ 'git 可视化工具')
 - [Electron](https://www.electronjs.org/zh/ '使用前端代码实现桌面端应用')
@@ -22,62 +16,6 @@
 - [Can I Use](https://caniuse.com/) 👍
 - [StatCounter](https://gs.statcounter.com/ '浏览器市场份额统计')
 - [RegExr](https://regexr.com/ '正则表达式测试')
-
-## 项目工程化
-
-- [npm](https://www.npmjs.com/ 'node 包管理器') 👍
-- [cnpm](https://npmmirror.com/ 'npm 包源镜像')
-- [yarn](https://yarnpkg.com/ 'node 包管理器')
-- [JsDelivr](https://www.jsdelivr.com/ 'CDN 服务')
-- [unpkg](https://unpkg.com/ 'CDN 服务')
-- [Webpack](https://webpack.docschina.org/concepts/ '打包工具')
-- [Webpack - webpack-bundle-analyzer](https://github.com/webpack-contrib/webpack-bundle-analyzer '包分析工具')
-- [esbuild](https://esbuild.github.io/ '打包工具')
-- [PARCEL](https://parceljs.org/docs/ '打包工具')
-- [Nx](https://nx.dev/ '项目管理工具')
-- [Prettier](https://prettier.io/ '代码格式化工具') 👍
-- [ESLint](https://eslint.org/ '代码格式检查工具') 👍
-- [Rollup](https://rollupjs.org/ '代码编译工具')
-- [Babel](https://babeljs.io/ 'js 代码编译工具')
-- [jest](https://jestjs.io/ 'js 测试框架') [🀄](https://www.jestjs.cn/)
-- [ts-jest](https://kulshekhar.github.io/ts-jest/ 'ts 测试框架')
-- [Chai](https://www.chaijs.com/ 'js 测试框架')
-- [Mocha](https://mochajs.org/ 'js 测试框架')
-- [Cypress](https://docs.cypress.io/guides/overview/why-cypress '前端测试框架')
-
-## Angular 相关
-
-- [Angular 官网](https://next.angular.io/) [🀄](https://angular.cn/)
-- [Angular - CLI](https://angular.cn/cli '命令行工具')
-- [【功能库】NgxDragDrop](https://reppners.github.io/ngx-drag-drop/simple '拖拽功能库')
-- [【模板库】Material](https://antv-2018.alipay.com/zh-cn/index.html 'Angular 官方模板库')
-- [【模板库】Nebular](https://akveo.github.io/nebular/)
-- [【模板库】NG-ZORRO](https://ng.ant.design/docs/introduce/zh)
-- [【模板库】PRIMENG](https://www.primefaces.org/primeng-v11-lts/#/)
-- [【模板库】AG Grid](https://www.ag-grid.com/example/#/)
-
-## React 相关
-
-- [React 官网](https://react.dev/) [🀄](https://react.docschina.org/)
-- [React - CLI](https://create-react-app.dev/ '命令行工具')
-- [【功能库】React Router](https://reactrouter.com/en/main/start/overview '路由库')
-- [【功能库】Redux](https://redux.js.org/ '状态管理库') [🀄](https://cn.redux.js.org/)
-- [【功能库】Redux Toolkit](https://redux-toolkit.js.org/ '状态管理库')
-- [【模板库】Ant Design](https://ant-design.antgroup.com/components/overview-cn/)
-
-## Vue 相关
-
-- [Vue 官网](https://cn.vuejs.org/)
-- [Vue - playground](https://play.vuejs.org/ '在线试用')
-- [Vue - CLI](https://cli.vuejs.org/zh/ '命令行工具')
-- [Vue - Devtools](https://devtools.vuejs.org/ '浏览器调试工具')
-- [Vue - Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar 'VS Code 代码提示插件')
-- [Vite](https://cn.vitejs.dev/ '构建工具') 👍
-- [Vite - 插件](https://github.com/vitejs/awesome-vite#plugins 'Vite 打包插件')
-- [VitePress](https://vitepress.dev/zh/ '文档生成工具')
-- [【功能库】Router](https://router.vuejs.org/zh/ '路由库')
-- [【功能库】Pinia](https://pinia.vuejs.org/zh/core-concepts/ '状态管理库')
-- [【模板库】Element Plus](https://element-plus.org/zh-CN/)
 
 ## 常用功能库
 
