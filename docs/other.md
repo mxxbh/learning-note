@@ -1,5 +1,7 @@
 # Other
 
+- [大话连篇](/其他/大话连篇)
+
 ## 开发工具
 
 - [Visual Studio Code](https://code.visualstudio.com/ '代码编辑器') 👍

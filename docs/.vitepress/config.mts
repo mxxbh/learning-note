@@ -134,6 +134,11 @@ export default defineConfig({
           ],
         },
       ],
+      '/其他/': [
+        { text: '大话连篇', link: '/其他/大话连篇' },
+        { text: '大言不惭', link: '/其他/大言不惭' },
+        { text: '讲个故事', link: '/其他/讲个故事' },
+      ]
     },
     socialLinks: [{ icon: 'github', link: 'https://github.com/vuejs/vitepress' }],
   },
