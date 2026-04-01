@@ -195,13 +195,35 @@ export default defineConfig({
           ],
         },
       ],
+"/其他/计算机科学与技术/": [
+        { text: "数据结构", link: "/其他/计算机科学与技术/数据结构" },
+        { text: "算法", link: "/其他/计算机科学与技术/算法" },
+        { text: "软件工程", link: "/其他/计算机科学与技术/软件工程" },
+        {
+          text: "网络",
+          link: "/其他/计算机科学与技术/网络",
+          collapsed: true,
+          items: [
+            {
+              text: "网络协议",
+              collapsed: false,
+              link: "/其他/计算机科学与技术/网络-传输层协议",
+              items: [
+                { text: "传输层协议", link: "/其他/计算机科学与技术/网络-传输层协议" },
+                { text: "网络层协议", link: "/其他/计算机科学与技术/网络-网络层协议" },
+                { text: "应用层协议", link: "/其他/计算机科学与技术/网络-应用层协议" },
+              ],
+            },
+          ],
+        },
+      ],
       "/面试问答_前端/": [
         { text: "概述", link: "/面试问答_前端/概述" },
         { text: "JS", link: "/面试问答_前端/JS" },
       ],
     },
     socialLinks: [
-      { icon: "github", link: "https://github.com/vuejs/vitepress" },
+      { icon: "github", link: "https://github.com/mxxbh/learning-note" },
     ],
   },
   base: "/learning-note",
