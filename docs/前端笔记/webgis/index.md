@@ -1,5 +1,26 @@
 # WebGIS
 
+| 工具                    | 描述              |
+| ----------------------- | ----------------- |
+| [geojson 数据展示][201] | 展示 geojson 数据 |
+| [shp 数据展示][202]     | 展示 shp 数据     |
+| [GeoAtlas][203]         | DataV 地理工具    |
+| [经纬度查询][204]       | 查询经纬度坐标    |
+
+| 代码库         | 描述         |
+| -------------- | ------------ |
+| [proj4js][205] | 坐标转换     |
+| [gcoord][206]  | 坐标转换     |
+| [Turf][207]    | geo 数据处理 |
+
+[201]: https://geojson.io/
+[202]: https://mapshaper.org/
+[203]: https://datav.aliyun.com/portal/school/atlas/area_selector
+[204]: https://jingweidu.bmcx.com/
+[205]: https://github.com/proj4js/proj4js
+[206]: https://github.com/hujiulong/gcoord#readme
+[207]: https://turfjs.org
+
 ## 数据格式
 
 ### geojson
@@ -17,6 +38,16 @@
 - **OpenStreetMap**：一款开源的免费地图服务，提供了各种地图类型，包括 OpenStreetMap、OpenCycleMap、OpenTopoMap 等。
 - **ArcGIS**：ArcGIS 是一款由 Esri 公司开发的地理信息系统平台，提供了各种地图服务，包括 ArcGIS Online、ArcGIS Enterprise、ArcGIS for Portal 等。ArcGIS 可以用来进行地理信息数据的管理、分析和可视化，支持各种地图类型，包括地图、热力图、散点图、饼图等。
 - **MapBox**：MapBox 是一款基于开源地图数据的商业公司，提供了各种地图服务，包括 MapBox Studio、MapBox GL、MapBox API 等。MapBox 提供了一系列的开源地图数据，包括 OpenStreetMap、Mapzen、OpenTopoMap 等，可以用来进行地图的可视化、分析和地理信息数据可视化。
+
+### 相关产品
+
+- [高德地图](https://ditu.amap.com/)、[高德地图开放平台](https://lbs.amap.com/)
+- [百度地图开放平台](https://lbsyun.baidu.com/index.php?title=%E9%A6%96%E9%A1%B5)
+- [天地图](https://www.tianditu.gov.cn/)
+- [OpenStreetMap](https://www.openstreetmap.org/)、[OpenStreetMap Overpass API](https://wiki.openstreetmap.org/wiki/Overpass_API)、[OpenStreetMap Overpass turbo](https://overpass-turbo.eu/)
+- [mapbox](https://docs.mapbox.com/help/getting-started/web-apps/)
+- [数字视觉](https://dc.dvgis.cn/#/index)
+- [Maptalks](https://maptalks.org/)
 
 ## 经纬度坐标系
 
@@ -37,11 +68,6 @@
   - 国家大地 2000 坐标系，与 WGS84 接近
   - 国家地理信息公共服务平台天地图使用
 
-## 地图投影
-
-> [多种投影定义](https://desktop.arcgis.com/zh-cn/arcmap/latest/map/projections/list-of-supported-map-projections.htm)  
-> [墨卡托投影 Transverse_Mercator](https://desktop.arcgis.com/zh-cn/arcmap/latest/map/projections/mercator.htm)
-
 ### 上海城建坐标
 
 > [上海城建坐标信息参考](https://spatialreference.org/ref/sr-org/9054/)  
@@ -57,7 +83,10 @@
  * @returns 对应的上海城建坐标，横纵坐标值均以 m 为单位
  */
 export function convertCIMToSHCity(position) {
-  return [position[0] + 0.000610186 * position[1] + 6008.12034084796, -position[1] + 0.000590789 * position[0] + 48283.9011521837];
+  return [
+    position[0] + 0.000610186 * position[1] + 6008.12034084796,
+    -position[1] + 0.000590789 * position[0] + 48283.9011521837,
+  ];
 }
 ```
 
@@ -78,6 +107,11 @@ function convertSHCityToCIM(position) {
 ```
 
 :::
+
+## 地图投影
+
+> [多种投影定义](https://desktop.arcgis.com/zh-cn/arcmap/latest/map/projections/list-of-supported-map-projections.htm)  
+> [墨卡托投影 Transverse_Mercator](https://desktop.arcgis.com/zh-cn/arcmap/latest/map/projections/mercator.htm)
 
 ## 底图
 
@@ -101,28 +135,3 @@ function convertSHCityToCIM(position) {
 - ArcGIS 常规矢量：https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}
 - ArcGIS 拓扑矢量：http://services.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}
 - OSM 矢量底图：http://a.tile.openstreetmap.org/{z}/{x}/{y}.png
-
-## 其他
-
-产品：
-
-- [高德地图](https://ditu.amap.com/)、[高德地图开放平台](https://lbs.amap.com/)
-- [百度地图开放平台](https://lbsyun.baidu.com/index.php?title=%E9%A6%96%E9%A1%B5)
-- [天地图](https://www.tianditu.gov.cn/)
-- [OpenStreetMap](https://www.openstreetmap.org/)、[OpenStreetMap Overpass API](https://wiki.openstreetmap.org/wiki/Overpass_API)、[OpenStreetMap Overpass turbo](https://overpass-turbo.eu/)
-- [mapbox](https://docs.mapbox.com/help/getting-started/web-apps/)
-- [数字视觉](https://dc.dvgis.cn/#/index)
-- [Maptalks](https://maptalks.org/)
-
-功能库：
-
-- [proj4js](https://github.com/proj4js/proj4js '坐标转换')
-- [gcoord](https://github.com/hujiulong/gcoord#readme '坐标转换')
-- [Turf](https://turfjs.org 'geo 数据处理')
-
-在线工具：
-
-- [geojson 数据展示](https://geojson.io/ '数据展示')
-- [shp 数据展示](https://mapshaper.org/ '数据展示')
-- [GeoAtlas](https://datav.aliyun.com/portal/school/atlas/area_selector 'DataV 地理工具')
-- [经纬度查询](https://jingweidu.bmcx.com/ '坐标查询')

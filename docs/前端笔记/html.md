@@ -1,21 +1,32 @@
 # HTML
 
+> 参考：[MDN-html][001]、[菜鸟教程-html][002]、[W3school-html][003]
+
+[001]: https://developer.mozilla.org/zh-CN/docs/Web/HTML
+[002]: https://www.runoob.com/html/html-tutorial.html
+[003]: https://www.w3school.com.cn/tags/index.asp
+
+| 概念     | 参考                         |
+| -------- | ---------------------------- |
+| 元素     | [MDN-元素][101]              |
+| 字符实体 | [菜鸟教程-字符实体][102]     |
+| 文档语言 | [W3school-语言代码参考][103] |
+| Manifest | [MDN-Manifest][104]          |
+
+[101]: https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element
+[102]: https://www.runoob.com/html/html-entities.html
+[103]: https://www.w3school.com.cn/tags/html_ref_language_codes.asp
+[104]: https://developer.mozilla.org/zh-CN/docs/Web/Manifest
+
 ## 知识点
 
 - 更改 `<input>` 元素 value 时，修改 property 不会影响其 Attribute，但更改 Attribute 会同时更改 property。
 - 可通过 `<map>` 元素定义具有多个不同热点区域的跳转链接。
 - 行内元素的 margin、padding、border 属性在水平方向上效果正常，在竖直方向上会渲染、会影响父元素对 overflow 的判断、不会影响布局效果。
 - 给元素设置 tabindex 属性使其支持 focus 及 blur 事件。
-- iframe 中存在激活状态，内嵌网页和外层网页只在激活时触发自身绑定的事件。
+- iframe 中存在激活状态，内嵌网页和外层网页在激活时才能监听相关事件。
 
-## 参考
-
-- [MDN 参考](https://developer.mozilla.org/zh-CN/docs/Web/HTML)
-- [菜鸟教程参考](https://www.runoob.com/html/html-tutorial.html)
-- [W3school 参考](https://www.w3school.com.cn/tags/index.asp)
-- [HTML 元素参考](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element)
-
-## 标签
+## 模板
 
 导入 css:
 
@@ -29,7 +40,7 @@
 <link rel="icon" href="./asset/img/ICON-s.png" />
 ```
 
-代码模板:
+元素结构:
 
 ::: code-group
 
@@ -58,26 +69,26 @@
 ```html [html4 整体结构]
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <!--
-  HTML 4.01 Strict 
-  <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-  
-  HTML 4.01 Transitional
-  <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+HTML 4.01 Strict 
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 
-  HTML 4.01 Frameset
-  <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd">
+HTML 4.01 Transitional
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
-  XHTML 1.0 Strict
-  <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+HTML 4.01 Frameset
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd">
 
-  XHTML 1.0
-  <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+XHTML 1.0 Strict
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
-  XHTML 1.0 Frameset
-  <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+XHTML 1.0
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-  XHTML 1.1
-  <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+XHTML 1.0 Frameset
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+
+XHTML 1.1
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 -->
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
@@ -89,7 +100,11 @@
 </html>
 ```
 
-```html [表单结构]
+:::
+
+表单：
+
+```html
 <form action="">
   <fieldset>
     <legend>表单</legend>
@@ -106,31 +121,31 @@
 </form>
 ```
 
-```html [表格结构]
+表格：
+
+```html
 <table border="1">
   <caption>
     标题
   </caption>
   <thead>
     <tr>
-      <th>表格</th>
-      <th>数据</th>
+      <th>列名1</th>
+      <th>列名2</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>小标题1</th>
-      <td>数据</td>
+      <td>xxx</td>
+      <td>xxx</td>
     </tr>
   </tbody>
 </table>
 ```
 
-:::
+import-map：
 
-## import-map
-
-```html
+```html{7-14,18}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -148,30 +163,9 @@
   </head>
   <body>
     <script type="module">
-      import _ from 'lodash';
+      import _ from "lodash";
       console.log(_.now());
     </script>
   </body>
 </html>
 ```
-
-## 响应式设计
-
-| 设备类型               | 宽度范围                |
-| ---------------------- | ----------------------- |
-| 大屏幕（大桌面显示器） | 1200px < width          |
-| 中等屏幕（桌面显示器） | 992px < width <= 1200px |
-| 小屏幕（平板）         | 768px < width <= 992px  |
-| 超小屏幕（手机屏幕）   | width <= 768px          |
-
-## Manifest
-
-> [Manifest](https://developer.mozilla.org/zh-CN/docs/Web/Manifest)
-
-## 字符实体
-
-> [字符实体](https://www.runoob.com/html/html-entities.html)
-
-## 文档语言
-
-> [语言代码参考](https://www.w3school.com.cn/tags/html_ref_language_codes.asp)

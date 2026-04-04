@@ -1,11 +1,18 @@
 # ThreeJS
 
-## 参考
+> [ThreeJS][001]
 
-- [官方文档](https://threejs.org/docs)
-- [功能库 camera-controls](https://github.com/yomotsu/camera-controls)
-- [功能库 Theatre.js](https://www.theatrejs.com/docs/latest)
-- [功能库 tween.js](https://github.com/tweenjs/tween.js/)
+[001]: https://threejs.org/docs
+
+| 代码库                 | 描述                                                           |
+| ---------------------- | -------------------------------------------------------------- |
+| [camera-controls][202] | 相机控制库，提供了多种相机控制方式，如轨道控制、第一人称控制等 |
+| [Theatre.js][203]      | 动画库，提供了时间轴、关键帧等功能，适用于复杂动画的制作       |
+| [tween.js][204]        | 动画库，提供了缓动函数                                         |
+
+[202]: https://github.com/yomotsu/camera-controls
+[203]: https://www.theatrejs.com/docs/latest
+[204]: https://github.com/tweenjs/tween.js/
 
 ## 示例
 
@@ -35,8 +42,8 @@
       }
     </script>
     <script type="module">
-      import * as THREE from 'three';
-      import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+      import * as THREE from "three";
+      import { OrbitControls } from "three/addons/controls/OrbitControls.js";
 
       const scene = new THREE.Scene();
       const clock = new THREE.Clock();
@@ -55,17 +62,19 @@
       const cube = new THREE.Mesh(geometry, material);
       scene.add(cube);
 
-      const clip = new THREE.AnimationClip('test_clip', 2, [new THREE.VectorKeyframeTrack('.position', [0, 1, 2], [0, 0, 0, 0, 5, 0, 0, 10, 0])]);
+      const clip = new THREE.AnimationClip("test_clip", 2, [
+        new THREE.VectorKeyframeTrack(".position", [0, 1, 2], [0, 0, 0, 0, 5, 0, 0, 10, 0]),
+      ]);
       const mixer = new THREE.AnimationMixer(cube);
       const action = mixer.clipAction(clip);
       action.setLoop(THREE.LoopRepeat, 2);
 
-      document.addEventListener('keydown', (e) => {
-        if (e.code === 'Space') {
+      document.addEventListener("keydown", (e) => {
+        if (e.code === "Space") {
           action.paused = true;
-        } else if (e.code === 'KeyS') {
+        } else if (e.code === "KeyS") {
           action.paused = false;
-        } else if (e.code === 'KeyA') {
+        } else if (e.code === "KeyA") {
           action.play();
         }
       });
@@ -93,14 +102,16 @@
 - 几何形状 geometry
 - 材质 material
 
-| 材质               | 描述 | 链接                                                            |
-| ------------------ | ---- | --------------------------------------------------------------- |
-| LineBasicMaterial  | 线   | <https://threejs.org/docs/#api/en/materials/LineBasicMaterial>  |
-| LineDashedMaterial | 虚线 | <https://threejs.org/docs/#api/en/materials/LineDashedMaterial> |
-
 导入器：
 
 - GLTF 模型导入器 GLTFLoader
+
+## 材质
+
+| 材质                      | 描述 |
+| ------------------------- | ---- |
+| [LineBasicMaterial][301]  | 线   |
+| [LineDashedMaterial][302] | 虚线 |
 
 ## GLTF 模型导入及导出
 
@@ -109,7 +120,7 @@
 > [官方示例](https://threejs.org/examples/?q=export#misc_exporter_gltf)
 
 ```js
-import { GLTFExporter } from 'three/addons/exporters/GLTFExporter.js';
+import { GLTFExporter } from "three/addons/exporters/GLTFExporter.js";
 
 const options = {
   trs: false,
@@ -123,15 +134,15 @@ gltfExporter.parse(
   scene,
   function (result) {
     if (result instanceof ArrayBuffer) {
-      save(new Blob([result], { type: 'application/octet-stream' }), 'scene.glb');
+      save(new Blob([result], { type: "application/octet-stream" }), "scene.glb");
     } else {
-      save(new Blob([JSON.stringify(result, null, 2)], { type: 'text/plain' }), 'scene.gltf');
+      save(new Blob([JSON.stringify(result, null, 2)], { type: "text/plain" }), "scene.gltf");
     }
   },
   function (error) {
-    console.log('An error happened during parsing', error);
+    console.log("An error happened during parsing", error);
   },
-  options
+  options,
 );
 
 function save(blob, filename) {
@@ -145,3 +156,6 @@ function save(blob, filename) {
 
 > [!NOTE] 避免重叠模型出现闪面（z-fighting 问题）
 > 关闭模型材质的深度计算 `new Material({ ..., depthWrite: false })`
+
+[301]: https://threejs.org/docs/#api/en/materials/LineBasicMaterial
+[302]: https://threejs.org/docs/#api/en/materials/LineDashedMaterial

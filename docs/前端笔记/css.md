@@ -1,29 +1,46 @@
-# css
+# CSS
+
+> 参考：[CSS DB][001]、[CSS Triggers][002]
+
+| 概念           | 参考                |
+| -------------- | ------------------- |
+| 浏览器属性前缀 | [CSS prefixes][003] |
+
+[001]: https://cssdb.org/ "最新 css 资讯"
+[002]: https://csstriggers.com/ "最新 css 资讯"
+[003]: https://developer.mozilla.org/en-US/docs/Glossary/Vendor_Prefix#css_prefixes
+
+| 效果          | 参考                                |
+| ------------- | ----------------------------------- |
+| 绘制形状      | [CSS-Tricks][201]                   |
+| 背景效果      | [CSS3 Patterns Gallery][202]        |
+| 图片特效      | [Bennett Feely][203]                |
+| 图片滤镜      | [CSS世界][204]                      |
+| loadding 效果 | [CSS-loaders][205]                  |
+| css 动效      | [Animista][206]、[Animate.css][207] |
+
+[201]: https://css-tricks.com/the-shapes-of-css/
+[202]: https://projects.verou.me/css3patterns/
+[203]: https://bennettfeely.com/image-effects/
+[204]: https://demo.cssworld.cn/new/11/3-10.php
+[205]: https://css-loaders.com/classic/
+[206]: https://animista.net/play/basic/scale-up
+[207]: https://www.jq22.com/yanshi819
 
 ## 知识点
 
 - `scroll-behavior: smooth` 加超链接锚点 `#id` 可以实现页面滚动效果。
-- 过去绝对定位元素的包含块是第一个 position 属性值不为 static 的祖先元素，现在 transform 属性值不为 none 的元素也可以作为绝对定位元素的包含块。
+- 过去绝对定位元素的包含块是第一个 position 不为 static 的祖先元素，现在 transform 属性值不为 none 的元素也可以作为绝对定位元素的包含块。
 - z-index 只能用在相对定位、绝对定位、固定定位和 flex 布局下的子元素上。
 - `display: contents` 表示元素本身不生成盒模型，相当于内部元素上升了一级。
 - 设置 `touch-action: manipulation` 可解决双击缩放手势引起的点击事件延迟现象。
 - 伪类选择器与类选择器的优先级相同，伪元素选择器与标签选择器的优先级相同。
 
-## 参考
-
-- 最新 css 资讯 [CSS DB](https://cssdb.org/)
-- 最新 css 资讯 [CSS Triggers](https://csstriggers.com/)
-- [CSS 参考手册](https://css.doyoe.com/)
-- [绘制形状参考](https://css-tricks.com/the-shapes-of-css/)
-- [背景效果参考](https://projects.verou.me/css3patterns/)
-- [图片特效参考](https://bennettfeely.com/image-effects/)
-- [图片滤镜参考](https://demo.cssworld.cn/new/11/3-10.php)
-
 ## 属性
 
-- border、text-shadow、box-shadow 属性的默认值是 currentcolor
+- border、text-shadow、box-shadow 属性的默认值是 currentcolor。
 
-| 部分属性                                                                      | 描述                                     |
+| 属性名                                                                        | 描述                                     |
 | ----------------------------------------------------------------------------- | ---------------------------------------- |
 | [resize](https://developer.mozilla.org/zh-CN/docs/Web/CSS/resize)             | 设置元素是否可调整尺寸                   |
 | [aspect-ratio](https://developer.mozilla.org/zh-CN/docs/Web/CSS/aspect-ratio) | 设置盒子纵横比                           |
@@ -40,12 +57,13 @@
 
 ## 单位
 
-> [参考](https://css.doyoe.com/values/index.htm)
+### 长度单位
 
-长度单位：
+绝对单位：
 
-- 绝对单位：1 in (英寸) = 2.54 cm (厘米) = 25.4 mm (毫米) = 101.6 q (1/4 毫米) = 72 pt (磅) = 6 pc (派卡) = 96 px (像素)
-- 相对单位：
+1 in (英寸) = 2.54 cm (厘米) = 25.4 mm (毫米) = 101.6 q (1/4 毫米) = 72 pt (磅) = 6 pc (派卡) = 96 px (像素)
+
+相对单位：
 
 | 相对单位 | 描述                                                       |
 | -------- | ---------------------------------------------------------- |
@@ -58,14 +76,23 @@
 | vmax     | css 3 引入，相对单位，相对于视口的宽度或高度中较大的那个   |
 | vmin     | css 3 引入，相对单位，相对于视口的宽度或高度中较小的那个   |
 
-角度单位：
+### 角度单位
 
-- 1 turn (圈) = 360 deg (度) = 400 grad (梯度) = 6.283 rad (弧度)
+1 turn (圈) = 360 deg (度) = 400 grad (梯度) = 6.283 rad (弧度)
 
-时间单位：
+### 时间单位
 
-- 1 s (秒) = 1000 ms (毫秒)
+1 s (秒) = 1000 ms (毫秒)
 
-频率单位：
+### 频率单位
 
-- 1 khz (千赫) = 1000 hz (赫兹)
+1 khz (千赫) = 1000 hz (赫兹)
+
+## 响应式设计
+
+| 设备类型               | 宽度范围                |
+| ---------------------- | ----------------------- |
+| 大屏幕（大桌面显示器） | 1200px < width          |
+| 中等屏幕（桌面显示器） | 992px < width <= 1200px |
+| 小屏幕（平板）         | 768px < width <= 992px  |
+| 超小屏幕（手机屏幕）   | width <= 768px          |

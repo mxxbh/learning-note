@@ -7,73 +7,60 @@ export default defineConfig({
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
-      { text: "Home", link: "/" },
-      { text: "技术笔记", link: "/技术笔记/网络开发/html" },
-      { text: "开发记录", link: "/开发记录/浏览器问题/ES Module 语法不支持" },
+      { text: "Home", link: "/index" },
+      { text: "前端笔记", link: "/前端笔记/html" },
+      { text: "功能开发", link: "/功能开发/html" },
+      { text: "问题记录", link: "/问题记录/html" },
       { text: "Other", link: "/other" },
     ],
     sidebar: {
-      "/技术笔记/": [
+      "/前端笔记/": [
         {
-          text: "网络开发",
+          text: "基础",
           collapsed: false,
           items: [
-            { text: "html", link: "/技术笔记/网络开发/html" },
-            { text: "css", link: "/技术笔记/网络开发/css" },
-            { text: "sass", link: "/技术笔记/网络开发/sass" },
+            { text: "html", link: "/前端笔记/html" },
+            { text: "css", link: "/前端笔记/css" },
+            { text: "sass", link: "/前端笔记/sass" },
             {
               text: "js",
-              link: "/技术笔记/网络开发/js/",
+              link: "/前端笔记/js",
               collapsed: true,
               items: [
-                { text: "事件循环", link: "/技术笔记/网络开发/js/事件循环" },
-                { text: "严格模式", link: "/技术笔记/网络开发/js/严格模式" },
+                { text: "事件循环", link: "/前端笔记/js-事件循环" },
+                { text: "严格模式", link: "/前端笔记/js-严格模式" },
               ],
             },
-            {
-              text: "ts",
-              link: "/技术笔记/网络开发/ts/",
-            },
-            {
-              text: "项目工程化",
-              link: "/技术笔记/网络开发/项目工程化",
-            },
-            { text: "angular", link: "/技术笔记/网络开发/angular" },
-            { text: "react", link: "/技术笔记/网络开发/react" },
-            { text: "vue", link: "/技术笔记/网络开发/vue" },
-            {
-              text: "webgl",
-              link: "/技术笔记/网络开发/webgl/",
-              collapsed: true,
-              items: [
-                { text: "threeJs", link: "/技术笔记/网络开发/webgl/threeJs" },
-              ],
-            },
-            {
-              text: "webgis",
-              link: "/技术笔记/网络开发/webgis/",
-              collapsed: true,
-              items: [
-                { text: "cesium", link: "/技术笔记/网络开发/webgis/cesium" },
-              ],
-            },
-            { text: "浏览器", link: "/技术笔记/网络开发/浏览器" },
+            { text: "ts", link: "/前端笔记/ts" },
+            { text: "angular", link: "/前端笔记/angular" },
+            { text: "react", link: "/前端笔记/react" },
+            { text: "vue", link: "/前端笔记/vue" },
+            { text: "浏览器", link: "/前端笔记/浏览器" },
           ],
         },
         {
-          text: "计算机科学与技术",
-          collapsed: true,
-          items: [
-            { text: "数据结构", link: "/技术笔记/计算机科学与技术/数据结构" },
-            { text: "算法", link: "/技术笔记/计算机科学与技术/算法" },
-            { text: "网络", link: "/技术笔记/计算机科学与技术/网络" },
-            { text: "软件工程", link: "/技术笔记/计算机科学与技术/软件工程" },
-          ],
+          text: "工程化",
+          collapsed: false,
+          link: "/前端笔记/工程化",
+          items: [],
         },
         {
           text: "其他",
-          collapsed: true,
-          items: [{ text: "window", link: "/技术笔记/其他/window" }],
+          collapsed: false,
+          items: [
+            {
+              text: "webgl",
+              link: "/前端笔记/webgl/",
+              collapsed: true,
+              items: [{ text: "threeJs", link: "/前端笔记/webgl/threeJs" }],
+            },
+            {
+              text: "webgis",
+              link: "/前端笔记/webgis/",
+              collapsed: true,
+              items: [{ text: "cesium", link: "/前端笔记/webgis/cesium" }],
+            },
+          ],
         },
       ],
       "/开发记录/": [
@@ -195,7 +182,7 @@ export default defineConfig({
           ],
         },
       ],
-"/其他/计算机科学与技术/": [
+      "/其他/计算机科学与技术/": [
         { text: "数据结构", link: "/其他/计算机科学与技术/数据结构" },
         { text: "算法", link: "/其他/计算机科学与技术/算法" },
         { text: "软件工程", link: "/其他/计算机科学与技术/软件工程" },
@@ -222,9 +209,7 @@ export default defineConfig({
         { text: "JS", link: "/面试问答_前端/JS" },
       ],
     },
-    socialLinks: [
-      { icon: "github", link: "https://github.com/mxxbh/learning-note" },
-    ],
+    socialLinks: [{ icon: "github", link: "https://github.com/mxxbh/learning-note" }],
   },
   base: "/learning-note",
   outDir: "./.vitepress/dist",

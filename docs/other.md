@@ -4,6 +4,7 @@
 
 - [计算机科学与技术](/其他/计算机科学与技术/数据结构)
 - [前端面试问答](/面试问答_前端/概述)
+- [Windows 系统](/其他/windows)
 
 ## 推荐
 
@@ -40,16 +41,9 @@
 | [IconPark](https://iconpark.oceanengine.com/official) | 图标库                   |
 | [Can I Use](https://caniuse.com/)                     | 查找前端接口兼容性       |
 | [StatCounter](https://gs.statcounter.com/)            | 浏览器市场份额统计       |
-| [RegExr](https://regexr.com/)                         | 正则表达式测试           |
 
 | 功能库                                                         | 浏览器 | Node | 描述                                     |
 | -------------------------------------------------------------- | :----: | :--: | ---------------------------------------- |
-| [Lodash](https://lodash.com/)                                  |   √    |  √   | 通用方法库                               |
-| [RxJS](https://rxjs.dev/)                                      |   √    |  √   | 响应式编程                               |
-| [uuid](https://github.com/uuidjs/uuid)                         |   √    |  √   | 用于生成唯一键值                         |
-| [pako](https://github.com/nodeca/pako)                         |   √    |  √   | 支持 deflate 及 gzip 算法的压缩/解压缩库 |
-| [JSZip](https://github.com/Stuk/jszip)                         |   √    |  √   | zip 压缩库                               |
-| [p-queue](https://github.com/sindresorhus/p-queue)             |   √    |  √   | 批量异步请求                             |
 | [clipboard](https://clipboardjs.com/)                          |   √    |      | 粘贴板功能                               |
 | [Matter](https://chinabigpan.github.io/matterjs_docs_zh_cn)    |   √    |      | js 2D 物理引擎                           |
 | [Tweakpane](https://tweakpane.github.io/docs)                  |   √    |      | 界面菜单工具                             |
@@ -62,7 +56,6 @@
 | [Swiper](https://swiperjs.com/swiper-api)                      |   √    |      | 轮播框组件库                             |
 | [PhotoSwipe](https://photoswipe.com/)                          |   √    |      | 图片展示组件库                           |
 | [nippleJS](https://yoannmoi.net/nipplejs/)                     |   √    |      | 摇杆组件库                               |
-| [Animate.css](https://www.jq22.com/yanshi819)                  |   √    |      | css 动效库                               |
 | [http-server](https://github.com/http-party/http-server)       |        |  √   | 静态服务器                               |
 | [node-fs-extra](https://github.com/jprichardson/node-fs-extra) |        |  √   | 提供 node 文件系统相关方法               |
 | [golbby](https://github.com/sindresorhus/globby)               |        |  √   | 基于 fast-glob 实现，用于查找文件        |
