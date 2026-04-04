@@ -26,7 +26,7 @@ features:
   - icon: ✒️
     title: 功能开发
     details: 具体功能的开发记录
-    link: /其他/计算机科学与技术/网络
+    link: /功能开发/页面功能/下载文件
   - icon: ❓
     title: 问题记录
     details: 开发中的问题

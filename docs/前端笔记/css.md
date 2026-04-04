@@ -16,7 +16,7 @@
 | 背景效果      | [CSS3 Patterns Gallery][202]        |
 | 图片特效      | [Bennett Feely][203]                |
 | 图片滤镜      | [CSS世界][204]                      |
-| loadding 效果 | [CSS-loaders][205]                  |
+| loadding 效果 | [CSS Loaders][205]                  |
 | css 动效      | [Animista][206]、[Animate.css][207] |
 
 [201]: https://css-tricks.com/the-shapes-of-css/
