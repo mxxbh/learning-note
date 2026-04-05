@@ -30,7 +30,7 @@ features:
   - icon: ❓
     title: 问题记录
     details: 开发中的问题
-    link: /其他/计算机科学与技术/网络
+    link: /问题记录/浏览器问题/低版本浏览器不支持Module语法
   - icon: 📋
     title: 前端面试问答
     details: 前端面试中的常见问题
