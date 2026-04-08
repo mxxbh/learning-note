@@ -144,9 +144,9 @@ export default defineConfig({
           ],
         },
       ],
-      "/面试问答_前端/": [
-        { text: "概述", link: "/面试问答_前端/概述" },
-        { text: "JS", link: "/面试问答_前端/JS" },
+      "/其他/前端应聘/": [
+        { text: "招聘要求", link: "/其他/前端应聘/招聘要求" },
+        { text: "JS", link: "/其他/前端应聘/JS" },
       ],
     },
     socialLinks: [{ icon: "github", link: "https://github.com/mxxbh/learning-note" }],

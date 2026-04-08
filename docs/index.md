@@ -15,7 +15,7 @@ hero:
       link: https://mxxbh.github.io
 
 features:
-  - icon: 🛜
+  - icon: 🛰️
     title: 网络基础
     details: 网络的基本模型、协议、请求过程
     link: /其他/计算机科学与技术/网络
@@ -23,7 +23,7 @@ features:
     title: 前端笔记
     details: 前端技术学习笔记
     link: /前端笔记/html
-  - icon: ✒️
+  - icon: 🖊️
     title: 功能开发
     details: 具体功能的开发记录
     link: /功能开发/页面功能/下载文件
@@ -34,5 +34,5 @@ features:
   - icon: 📋
     title: 前端面试问答
     details: 前端面试中的常见问题
-    link: /其他/计算机科学与技术/网络
+    link: /其他/前端应聘/JS
 ---
