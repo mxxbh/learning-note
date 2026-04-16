@@ -29,7 +29,7 @@
 
 ## 知识点
 
-- `scroll-behavior: smooth` 加超链接锚点 `#id` 可以实现页面滚动效果。
+- `scroll-behavior: smooth` 加超链接锚点 #id 可以实现页面滚动效果。
 - 过去绝对定位元素的包含块是第一个 position 不为 static 的祖先元素，现在 transform 属性值不为 none 的元素也可以作为绝对定位元素的包含块。
 - z-index 只能用在相对定位、绝对定位、固定定位和 flex 布局下的子元素上。
 - `display: contents` 表示元素本身不生成盒模型，相当于内部元素上升了一级。

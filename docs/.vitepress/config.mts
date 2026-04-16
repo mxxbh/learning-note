@@ -147,6 +147,13 @@ export default defineConfig({
       "/其他/前端应聘/": [
         { text: "招聘要求", link: "/其他/前端应聘/招聘要求" },
         { text: "JS", link: "/其他/前端应聘/JS" },
+        { text: "TS", link: "/其他/前端应聘/TS" },
+        { text: "CSS", link: "/其他/前端应聘/CSS" },
+        { text: "HTML", link: "/其他/前端应聘/HTML" },
+        { text: "工程化", link: "/其他/前端应聘/工程化" },
+        { text: "Node", link: "/其他/前端应聘/Node" },
+        { text: "VUE", link: "/其他/前端应聘/VUE" },
+        { text: "WEB", link: "/其他/前端应聘/WEB" },
       ],
     },
     socialLinks: [{ icon: "github", link: "https://github.com/mxxbh/learning-note" }],
