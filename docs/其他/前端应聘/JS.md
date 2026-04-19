@@ -69,8 +69,96 @@ console.log(Object.prototype.toString.call(function () {})); // [object Function
 ```
 
 ## 字符串常用方法有哪些？
+
+示例方法：
+```js
+"hello world".charAt(0); // "h"
+"hello world".charCodeAt(0); // 104
+"hello world".concat("!"); // "hello world!"
+"hello world".indexOf("o"); // 4
+"hello world".lastIndexOf("o"); // 7
+"hello world".match(/o/g); // ["o", "o"]
+"hello world".replace("o", "0"); // "hell0 world"
+"hello world".search(/o/); // 4
+"hello world".slice(3, 7); // "lo w"
+"hello world".substr(3, 7); // "lo worl"
+"hello world".substring(3, 7); // "lo w"
+"hello world".split(" "); // ["hello", "world"]
+"hello world".repeat(2); // "hello worldhello world"
+"hello world".toLowerCase(); // "hello world"
+"hello world".toUpperCase(); // "HELLO WORLD"
+"   hello world   ".trim(); // "hello world"
+"   hello world   ".trimStart(); // "hello world   "
+"   hello world   ".trimEnd(); // "   hello world"
+"hello world".padstart(15, "*"); // "****hello world"
+"hello world".padEnd(15, "*"); // "hello world****"
+"hello world".includes("o"); // true
+"hello world".startsWith("h"); // true
+"hello world".endsWith("d"); // true
+```
+
 ## 数组常用方法有哪些？
+
+构造函数：
+```js
+Array.from([1, 2, 3], (x) => x * x); // [1, 4, 9]
+Array.of(1, 2, 3); // [1, 2, 3]
+Array(); // []
+Array(3); // [, , ,]
+Array(3, 11, 8); // [3, 11, 8]
+```
+
+实例方法：
+```js
+[1, 2, 3, 4, 5].copyWithin(0, 3); // [4, 5, 3, 4, 5]
+[1, 2, 3, 4, 5].fill(0); // [0, 0, 0, 0, 0]
+[1, 2, 3].pop(); // 方法返回弹出的内容 3，数组的内容变为 [1, 2]
+[1, 2].push(3); // 方法返回数组长度 3，数组的内容变为 [1, 2, 3]
+[1, 2, 3].shift(); // 方法返回弹出的内容 1，数组的内容变为 [2, 3]
+[1, 2, 3].unshift(0); // 方法返回数组长度 4，数组的内容变为 [0, 1, 2, 3]
+[1，2].concat([3, 4]); // [1, 2, 3, 4]
+[1, 2, 3].slice(0, 2); // [1, 2]
+[1, 2, 3].splice(1, 1, 4, 5); // 方法返回被删除的元素 [2]，数组的内容变为 [1, 4, 5, 3]
+[1, 2, 3].reverse(); // [3, 2, 1]
+[1, 2, 3].sort((a, b) => b - a); // [3, 2, 1]
+[1, 2, 3].forEach((x, i) => doString(x, i)); // 遍历
+[1, 2, 3].map((x, i) => doString(x, i)); // 遍历
+[1, 2, 3].entries(); // Array Iterator {0 => 1, 1 => 2, 2 => 3}
+[1, 2, 3].keys(); // Array Iterator {0, 1, 2}
+[1, 2, 3].values(); // Array Iterator {1, 2, 3}
+[1, 2, 3].some((x) => x > 2); // true
+[1, 2, 3].every((x) => x > 0); // true
+[1, 2, NaN].includes(NaN); // true
+[1, 2, 3].find((x) => x > 1); // 2
+[1, 2, 3].findIndex((x) => x > 1); // 1
+[1, 2, 3, 2].indexOf(2); // 1
+[1, 2, 3, 2].lastIndexOf(2); // 3
+[1, 2, 3].filter((x) => x > 1); // [2, 3]
+[1, 2, 3].reduce((acc, x) => acc + x, 0); // 6
+[1, 2, 3].join("-"); // "1-2-3"
+[2, 3, 4].flatMap((x) => [x, x * 2]); // [2, 4, 3, 6, 4, 8]
+[1, [2], [[3]]].flat(2); // [1, 2, 3]
+```
+
+:::tip
+只有排序方法 (sort、reverse) 和增删元素的方法（push、pop、shift、unshift、splice）会改变原数组，其他方法不会改变原数组，只会返回一个新的数组。
+:::
+
 ## Promise 常用方法有哪些？
+
+构造函数：[Promise.all()][2026041901]、[Promise.race()][2026041902]、[Promise.allSettled()][2026041903]
+```js
+Promise.all([p1, p2, p3]); // 列表所有项均 fulfilled 时才会 fulfilled，若有一项达到 rejected 就会 rejected
+Promise.allSettled([p1, p2, p3]); // 列表所有项均完成（fulfilled 或 rejected）时才会 fulfilled
+Promise.any([p1, p2, p3]); // 列表任一项 fulfilled 就会 fulfilled，所有项 rejected 时才会 rejected
+Promise.race([p1, p2, p3]); // 列表第一项完成时就会完成，第一项 fulfilled 就会 fulfilled，第一项 rejected 就会 rejected
+Promise.resolve(value); // 返回一个以给定值解析后的 Promise 对象
+Promise.reject(reason); // 返回一个以给定理由拒绝后的 Promise 对象
+```
+
+[2026041901]: https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Promise/all
+[2026041902]: https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Promise/race
+[2026041903]: https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Promise/allSettled
 
 ## var、let、const 的区别？
 
