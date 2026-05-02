@@ -116,9 +116,12 @@
 
 ## GLTF 模型导入及导出
 
-> [GLTFLoader](https://threejs.org/docs/index.html#examples/en/loaders/GLTFLoader)  
-> [GLTFExporter](https://threejs.org/docs/index.html#examples/en/exporters/GLTFExporter)  
-> [官方示例](https://threejs.org/examples/?q=export#misc_exporter_gltf)
+> 参考：[GLTFLoader][20260502001]、[GLTFExporter][20260502002]、[官方示例][20260502003]、[GLTF在线预览][20260502004]
+
+[20260502001]: https://threejs.org/docs/index.html#examples/en/loaders/GLTFLoader
+[20260502002]: https://threejs.org/docs/index.html#examples/en/exporters/GLTFExporter
+[20260502003]: https://threejs.org/examples/?q=export#misc_exporter_gltf
+[20260502004]: https://gltf-viewer.donmccurdy.com/
 
 ```js
 import { GLTFExporter } from "three/addons/exporters/GLTFExporter.js";
