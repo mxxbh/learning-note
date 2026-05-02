@@ -1,6 +1,6 @@
 # Vue
 
-> 背景：[Vue][001]、[playground][002]、[CLI][003]、
+> 参考：[Vue][001]、[playground][002]、[CLI][003]、
 
 [001]: https://cn.vuejs.org/
 [002]: https://play.vuejs.org/

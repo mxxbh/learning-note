@@ -45,7 +45,7 @@ export default defineConfig({
           items: [],
         },
         {
-          text: "其他",
+          text: "扩展",
           collapsed: false,
           items: [
             {

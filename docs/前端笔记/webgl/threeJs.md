@@ -1,8 +1,9 @@
 # ThreeJS
 
-> [ThreeJS][001]
+> 参考：[ThreeJS][001]、[中文教程][002]
 
 [001]: https://threejs.org/docs
+[002]: https://threejs.org/manual/#zh/installation
 
 | 代码库                 | 描述                                                           |
 | ---------------------- | -------------------------------------------------------------- |

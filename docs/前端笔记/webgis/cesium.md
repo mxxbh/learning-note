@@ -1,8 +1,10 @@
 # Cesium
 
-> [Cesium](https://www.cesium.com/)  
-> [示例](https://sandcastle.cesium.com/)  
-> [api 列表](https://cesium.com/learn/cesiumjs/ref-doc/)
+> 参考：[Cesium][001]、[api 列表][002]、[示例][003]
+
+[001]: https://www.cesium.com/
+[002]: https://cesium.com/learn/cesiumjs/ref-doc/
+[003]: https://sandcastle.cesium.com/
 
 基本使用示例：
 
