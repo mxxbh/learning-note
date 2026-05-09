@@ -230,7 +230,7 @@ new 操作符的实现步骤如下：
 1. 创建一个对象
 2. 将构造函数的作用域赋给新对象（也就是将对象的__proto__属性指向构造函数的prototype属性）
 3. 执行构造函数中的代码，构造函数中的this指向该对象（也就是为这个对象添加属性和方法）
-4. 返回新的对象
+4. 如果构造函数返回引用类型（对象/数组/函数），返回该值；否则返回第一步创建的新对象。
 
 new 一个箭头函数的会报错。箭头函数是 ES6 中的提出来的，它没有 prototype，没有自己的 this 指向，更不可以使用 arguments，上面的第 2、3 步没有办法执行,所以不能 new 一个箭头函数。
 
@@ -349,16 +349,201 @@ js 和一般的面向对象语言不同，在 ES6 之前没有类的概念。
 - 动态原型模式。这种模式将原型方法赋值的创建过程移动到了构造函数的内部，通过对属性是否存在的判断，可以实现仅在第一次调用函数时对原型对象赋值一次的效果。这一种方式很好地对上面的混合模式进行了封装。
 - 寄生构造函数模式。这种模式和工厂模式的实现基本相同，它主要基于一个已有的类型，在实例化时对实例化的对象进行扩展。这样既不用修改原来的构造函数，也能够扩展对象。它和工厂模式一样，无法实现对象的识别。
 
-## 对象继承的方式有哪些?（完善代码示例）
+## 对象继承的方式有哪些?
 
-- 通过原型链。这种方式创建子类型时不能传递参数，且当包含引用类型数据时，会被所有的实例对象所共享，容易造成修改的混乱。
-- 借用构造函数。在子类型的构造函数中调用父类型的构造函数，这种方法能够传递参数，但无法实现函数方法的复用，且父类型原型上的方法不能被子类型访问。
-- 组合继承。组合继承是结合上述两种方式，通过借用构造函数实现属性的继承，通过将子类型的原型设置为父类型的实例来实现方法的继承。
-- 原型式继承。原型式继承是基于已有的对象来创建新的对象，是向函数中传入一个对象并返回一个以这个对象为原型的对象。这种方式不是为了创造一种新的类型，只是对某个对象实现一种简单继承，ES5 中定义的 Object.create() 方法就是原型式继承的实现。缺点与原型链方式相同。
-- 寄生式继承。寄生式继承的思路是创建一个用于封装继承过程的函数，先传入一个对象，然后复制一个对象的副本，再对象进行扩展，最后返回这个对象。这种继承的优点就是对一个简单对象实现继承。缺点是没有办法实现函数的复用。
-- 寄生式组合继承。组合继承的缺点就是使用父类型的实例做为子类型的原型，导致添加了不必要的原型属性。寄生式组合继承的方式是使用父类型的原型的副本来作为子类型的原型，这样就避免了创建不必要的属性。
+### 原型链继承
+
+示例：
+```js
+// 父类
+function Parent() {}
+// 子类
+function Child() {}
+// 核心：原型链继承
+Child.prototype = new Parent();
+Child.prototype.constructor = Child;
+```
+
+缺点：
+- 引用类型属性所有实例共享，改一个全变。
+- 子类无法向父类传参。
+
+### 构造函数继承
+
+示例：
+```js
+function Parent(name) {
+  this.name = name;
+}
+Parent.prototype.say = function () {
+  console.log("父类方法");
+};
+
+function Child(name) {
+  // 核心：借用构造函数
+  Parent.call(this, name);
+}
+
+const c1 = new Child("子类");
+console.log(c1.name);
+```
+
+优点：
+- 不存在引用共享的问题。
+- 支持传参。
+
+缺点：
+- 继承不到父类原型上的方法。
+
+### 组合继承（原型链 + 构造函数）
+组合继承是结合上述两种方式，通过借用构造函数实现属性的继承，通过将子类型的原型设置为父类型的实例来实现方法的继承。
+
+示例：
+```js
+function Parent(name) {
+  this.name = name;
+  this.arr = [1, 2, 3];
+}
+Parent.prototype.say = function () {
+  console.log("父类原型方法");
+};
+
+function Child(name, age) {
+  Parent.call(this, name);
+  this.age = age;
+}
+Child.prototype = new Parent();
+Child.prototype.constructor = Child;
+```
+
+缺点：
+- 父类构造函数执行了两次。
+
+### 原型式继承
+基于已有的对象来创建新的对象，是向函数中传入一个对象并返回一个以这个对象为原型的对象。
+这种方式不是为了创造一种新的类型，只是对某个对象实现一种简单继承，ES5 中定义的 `Object.create()` 方法就是原型式继承的实现。
+
+示例：
+```js
+const parentObj = {
+  name: "父对象",
+  arr: [1, 2, 3],
+  say: function () {
+    console.log("原型式继承");
+  }
+};
+
+const childObj = Object.create(parentObj);
+```
+
+缺点：
+- 引用属性依旧共享，适合单纯对象浅继承
+
+### 寄生式继承
+封装一个函数，内部创建对象、增强方法再返回。
+
+示例：
+```js
+function createChild(obj) {
+  const o = Object.create(obj);
+  o.run = function () {
+    console.log("子类独有方法");
+  };
+  return o;
+}
+
+const parent = { name: "父" };
+const child = createChild(parent);
+console.log(child.name);
+child.run();
+```
+
+缺点：
+- 函数复用差，每个实例都创建一遍方法。
+
+### 寄生组合继承
+不用 new Parent() 污染子类原型，用空函数中转。
+只执行一次父类构造，无属性冗余，ES5 最优继承。
+
+示例：
+```js
+function Parent(name) {
+  this.name = name;
+}
+Parent.prototype.say = function () {
+  console.log("父类方法");
+};
+
+function Child(name, age) {
+  Parent.call(this, name);
+  this.age = age;
+}
+
+// 核心：空函数中转
+function Fn() {}
+Fn.prototype = Parent.prototype;
+Child.prototype = new Fn();
+Child.prototype.constructor = Child;
+
+const c1 = new Child("小红", 20);
+c1.say();
+console.log(c1.name, c1.age);
+```
+
+### ES6 class 继承（语法糖，底层还是寄生组合）
+
+示例：
+```js
+class Parent {
+  constructor(name) {
+    this.name = name;
+  }
+  say() {
+    console.log("ES6 父类方法");
+  }
+}
+
+class Child extends Parent {
+  constructor(name, age) {
+    super(name); // 必须先调用 super
+    this.age = age;
+  }
+  run() {
+    console.log("子类独有方法");
+  }
+}
+
+const c1 = new Child("Child", 22);
+c1.say();
+c1.run();
+```
 
 ## 类型转换机制是什么？
+
+- 显示转换，方法包括：`Number()`、`parseInt()`、`String()`、`Boolean()`。
+- 隐式转换，常见发生场景：
+  - `if`、`while` 语句
+  - 比较运算 `==`、`!=`、`>`、`<`
+  - 算术运算 `+`、`-`、`*`、`/`、`%`
+  - 取反 `!`
+- 在 `+` 运算中，存在字符串时会转换成字符串进行拼接，不存在时会转换为数值进行相加。
+- 在 `==` 判断中，
+  - null == undefined → true（仅此一对特殊）
+  - 数字 vs 字符串 → 字符串转数字
+  - 布尔值 → 先转数字
+  - 对象 vs 基本类型 → 对象转原始值
+
+常见转换：
+| 原始值    | 转换为布尔值 | 转换为数值                             | 转换为字符串 |
+| --------- | ------------ | -------------------------------------- | ------------ |
+| true      | true         | 1                                      | 'true'       |
+| false     | false        | 0                                      | 'false'      |
+| 0         | false        | 0                                      | '0'          |
+| ''        | false        | 0                                      | ''           |
+| null      | false        | 0  <Badge type="warning">注意</Badge>  | 'null'       |
+| undefined | false        | NaN <Badge type="warning">注意</Badge> | 'undefined'  |
+| NaN       | false        | NaN                                    | 'NaN'        |
+
 
 ## 作用域、作用域链是什么？
 
@@ -382,8 +567,61 @@ let 和 const 声明的变量不会有变量提升，也不可以重复声明，
 作用域链的前端始终都是当前执行上下文的变量对象。全局执行上下文的变量对象（也就是全局对象）始终是作用域链的最后一个对象。
 
 ## 闭包是什么？
+
+本质就是函数嵌套函数，内部函数引用了外部函数的变量或参数。
+外部函数执行完毕后，被引用的变量不会被垃圾回收。
+
+运用场景：
+- 私有化变量：避免全局污染，创建私有变量
+- 保存状态：像上面的计数器，持久保存数据
+- 函数柯里化：实现参数复用
+- 模块化开发：早期 JS 模块化的核心方案
+
+缺点：
+- 过度使用会导致内存泄漏
+
 ## 执行栈、执行上下文是什么？
+
+- 执行上下文：代码运行时的环境容器（存变量、this、作用域链）。
+- 执行栈（调用栈）：用来顺序管理所有执行上下文的栈结构，后进先出。
+
+执行上下文类型：
+- 全局执行上下文：默认创建，包含全局对象和全局作用域。
+- 函数执行上下文：每次调用函数时创建，包含函数的参数。
+- Eval 执行上下文：eval 内部代码运行产生。
+
 ## 深拷贝、浅拷贝是什么？
+
+- 浅拷贝：只拷贝表层，引用类型只拷贝地址，新旧对象共享堆内存，改一个互相影响。
+- 深拷贝：层层完整拷贝，开辟全新堆内存，新旧对象完全独立，互不影响。
+
+常见浅拷贝写法：
+```js
+let newObj1 = {...oldObj}; // 对象扩展运算符
+
+let newObj2 = Object.assign({}, oldObj); // Object.assign()
+```
+
+常见深拷贝写法：
+```js
+/**
+ * 使用 JSON.parse 方法。
+ * 适用于纯对象，无法复制函数、正则、Date、undefined、undefined、Symbol
+ * 无法处理循环引用
+ */
+let newObj1 = JSON.parse(JSON.stringify(oldObj));
+
+/**
+ * lodash 库的 cloneDeep 方法。
+ */
+let newObj2 = _.cloneDeep(oldObj);
+
+/**
+ * window 对象的 structuredClone 方法。
+ * 适用于纯对象，无法复制函数、undefined、Symbol
+ */
+let newObj3 = structuredClone(oldObj);
+```
 
 ## 原型、原型链是什么？
 
@@ -476,7 +714,9 @@ moduleB(); // 输出 hello world B
 使用尾调用，可以不必再保留当前的执行上下文，从而节省了内存，这就是尾调用优化。
 
 ## 高阶函数是什么？
+
 ## 防抖、节流是什么？
+
 ## 事件模型是什么？（事件冒泡、事件捕获）
 ## 事件代理是什么？（事件委托、事件总线）
 ## 正则表达式是什么？
