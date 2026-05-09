@@ -27,6 +27,7 @@ export default defineConfig({
               link: "/前端笔记/js",
               collapsed: true,
               items: [
+                { text: "正则表达式", link: "/前端笔记/js-正则表达式" },
                 { text: "事件循环", link: "/前端笔记/js-事件循环" },
                 { text: "严格模式", link: "/前端笔记/js-严格模式" },
               ],

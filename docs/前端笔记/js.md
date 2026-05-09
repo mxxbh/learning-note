@@ -72,22 +72,9 @@
 | function     |           √ √ √            |         可以         |
 | class        |           √ × ×            |        不可以        |
 
-## 正则表达式
-
-| 概念               | 参考                          |
-| ------------------ | ----------------------------- |
-| 正则表达式转义字符 | [mdn-正则表达式转义字符][104] |
-| 正则表达式断言     | [mdn-正则表达式断言][105]     |
-| 正则表达式测试     | [RegExr][108]                 |
-
-[104]: https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Regular_expressions/Character_classes
-[105]: https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Regular_Expressions/Assertions
-[108]: https://regexr.com/
-
 ## 示例
 
 隐式转换：
-
 ::: code-group
 
 ```js [判断相等]
@@ -115,7 +102,6 @@
 :::
 
 使用生成器函数给对象提供 for/of 遍历方式：
-
 ```javascript
 function* objectEntries(obj) {
   const propKeys = Reflect.ownKeys(obj); // 返回对象所有的属性，不管属性是否可枚举，包括 Symbol
@@ -131,7 +117,6 @@ for (const [key, value] of objectEntries(jane)) {
 ```
 
 使用 Set 对象实现集合运算:
-
 ```javascript
 let a1 = [1, 2, 3, 3];
 let a2 = [2, 3, 4];
@@ -148,7 +133,6 @@ let difference = new Set(a1.filter((x) => !a2.has(x))); // Set {1}
 ```
 
 不使用额外变量交换两个变量的值：
-
 ```js
 // 加减法
 a = a + b;
