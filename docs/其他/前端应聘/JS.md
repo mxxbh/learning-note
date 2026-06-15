@@ -606,7 +606,7 @@ let newObj2 = Object.assign({}, oldObj); // Object.assign()
 ```js
 /**
  * 使用 JSON.parse 方法。
- * 适用于纯对象，无法复制函数、正则、Date、undefined、undefined、Symbol
+ * 适用于纯对象，无法复制函数、正则、Date、undefined、Symbol
  * 无法处理循环引用
  */
 let newObj1 = JSON.parse(JSON.stringify(oldObj));
