@@ -35,7 +35,6 @@ export default defineConfig({
             { text: "ts", link: "/前端笔记/ts" },
             { text: "angular", link: "/前端笔记/angular" },
             { text: "react", link: "/前端笔记/react" },
-            { text: "vue", link: "/前端笔记/vue" },
             { text: "浏览器", link: "/前端笔记/浏览器" },
           ],
         },
